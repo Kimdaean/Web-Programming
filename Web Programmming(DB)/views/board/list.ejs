@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+    function goSearch(){
+        var search = document.getElementById('search').value;
+        location.href = '/board/list?q='+search;
+    }
+
+</script>
+<body>
+    <div style="text-align: center">
+        <h2>자료 리스트</h2>
+        <form action="upload_proc" method="post" enctype="multipart/form-data">
+        <table align="center" border="1" width="800px;">
+            <th>제목</th>
+            <th>글</th>
+            <th>글쓴이</th>
+            <th>수정</th>
+            <th>삭제</th>
+            <% if (board != null){
+                for(var i = 0; i < board.length; i++){
+            %>
+            <tr>
+                <td><a href="/board/detail?id=<%=board[i]._id%>"><%=board[i].title%></a></td>
+                <td><%=board[i].contents%></td>
+                <td><%=board[i].author%></td>
+                <td><a href="/board/mod_form?id=<%=board[i]._id%>">수정</a></td>
+                <td><a href="/board/del_proc?id=<%=board[i]._id%>">삭제</a></td>
+            </tr>
+            <%}}%>
+        </table>
+            <div>
+                <input type="text" value="<%=q%>" id="search">
+                <input type="button" value="검색" onclick="goSearch()">
+
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>

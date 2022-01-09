@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div style="text-align: center">
+        <h2>파일 업로드</h2>
+        <form action="upload_proc" method="post" enctype="multipart/form-data">
+        <table align="center" width="800px;">
+            <tr>
+                <td>제목</td>
+                <td align="left"><input type="text" name="title" value=""  style="width: 700px;"></td>
+            </tr>
+            <tr>
+                <td>글</td>
+                <td align="left"><textarea name="contents" rows="10" cols="100"></textarea></td>
+            </tr>
+            <tr>
+                <td>글쓴이</td>
+                <td align="left"><input type="text" name="author" value="" style="width: 400px;"></td>
+            </tr>
+          <!--   <tr>
+                <td>파일</td>
+                <td><input type="file" name="file" value=""></td>
+            </tr> -->
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="입력">
+                    <input type="reset" value="취소">
+                </td>
+
+            </tr>
+        </table>
+        </form>
+    </div>
+
+</body>
+</html>

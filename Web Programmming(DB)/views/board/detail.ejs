@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div style="text-align: center">
+        <h2>자료 수정</h2>
+        <form action="add_comment" method="post" >
+            <input type="hidden" name="id" value="<%=board._id%>">
+        <table align="center" border="1" width="800px;">
+
+            <tr>
+                <td>제목</td>
+                <td align="left"><%=board.title%></td>
+            </tr>
+            <tr>
+                <td>글</td>
+                <td align="left"><%=board.contents%></td>
+            </tr>
+            <tr>
+                <td>글쓴이</td>
+                <td align="left"><%=board.author%></td>
+            </tr>
+            <%for(var i = 0; i < board.comments.length; i ++){%>
+            <tr>
+                <td>[댓글]</td>
+                <td align="left">[<%=board.comments[i].contents%>]</td>
+            </tr>
+            <%}%>
+            <tr>
+                <td>댓글쓰기</td>
+                <td align="left"><input type="text" name="contents" style="width: 700px;"></td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="댓글">
+                    <input type="reset" value="취소">
+                </td>
+
+            </tr>
+        </table>
+        </form>
+    </div>
+
+</body>
+</html>
